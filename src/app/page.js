@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className={`${fuzzy.className} font-extrabold`}>
       {/* Apply the font directly through className */}
-      <Results />
+      <Question />
     </main>
   );
 }
