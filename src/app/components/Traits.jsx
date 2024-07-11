@@ -9,6 +9,10 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+import { Gaegu } from "next/font/google";
+
+const gaegu = Gaegu({ subsets: ["latin"], weight: ["400"] });
+
 export default function Traits() {
   const data = [
     { day: "Critical thinking", amount: 130 },
@@ -19,23 +23,21 @@ export default function Traits() {
   ];
 
   return (
-    <div className="flex justify-evenly w-full md:w-1/3 items-center">
-      <div className="h-full w-1/2 flex flex-col justify-around">
-        <p className="w-full md:text-center">Data Doodads</p>
-
-        <div className="h-full w-full">
+    <div className="flex justify-evenly w-full items-center">
+      <div className="h-[90%] xl:h-72 w-1/2 flex flex-col justify-around items-center">
+        <div className="h-full w-full relative">
           <ResponsiveContainer width="100%" height="100%">
             <RadarChart data={data} outerRadius="60%">
               <PolarGrid stroke="black" opacity={0.5} />
               <PolarAngleAxis
                 dataKey="day"
-                tick={{ fontSize: 8, width: "minimum", fill: "black" }}
+                tick={{ fontSize: window.innerWidth > 639 && window.innerWidth < 1025 ? 16 : 10, width: "minimum", fill: "black" }}
               />
               <Radar
                 name="Points"
                 dataKey="amount"
-                stroke="rgb(236,188,40)"
-                fill="rgb(236,188,40)"
+                stroke="rgb(181, 181, 181)"
+                fill="rgb(181, 181, 181)"
                 fillOpacity={0.7}
               />
               <Tooltip />
@@ -45,24 +47,17 @@ export default function Traits() {
       </div>
 
       <div className="h-full gap-3 flex flex-col max-h-60 overflow-auto justify-evenly">
-        <div className="relative w-28 h-auto">
-          <img src="/card.png" className="w-full h-auto object-cover" />
-          <div className="absolute inset-0 flex items-center justify-center text-black">
-            <p className="text-wrap w-min">Determind</p>
-          </div>
-        </div>
-        <div className="relative w-28 h-auto">
-          <img src="/card.png" className="w-full h-auto object-cover" />
-          <div className="absolute inset-0 flex items-center justify-center text-black">
-            <p className="text-wrap w-min">Determined</p>
-          </div>
-        </div>
-        <div className="relative w-28 h-auto">
-          <img src="/card.png" className="w-full h-auto object-cover" />
-          <div className="absolute inset-0 flex items-center justify-center text-black">
-            <p className="text-wrap w-min">Determined</p>
-          </div>
-        </div>
+        <p className="text-wrap xl:text-lg flex justify-center items-center bg-[rgb(162,202,188)] h-14 xl:h-16 w-36 xl:w-44 border-[2px] border-[#85a095]">
+          Determined
+        </p>
+
+        <p className="text-wrap xl:text-lg flex justify-center items-center bg-[rgb(162,202,188)] h-14 xl:h-16 w-36 xl:w-44 border-[2px] border-[#85a095]">
+          Determined
+        </p>
+
+        <p className="text-wrap xl:text-lg flex justify-center items-center bg-[rgb(162,202,188)] h-14 xl:h-16 w-36 xl:w-44 border-[2px] border-[#85a095]">
+          Determined
+        </p>
       </div>
     </div>
   );

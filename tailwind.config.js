@@ -20,6 +20,7 @@ module.exports = {
       colors: {
         bg: "#e6d5b1",
         bwn: "rgba(241,204,39)",
+        gray: "rgba(181, 181, 181)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -72,12 +73,17 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(7px)' },
           '50%': { transform: 'translateY(-5px)' },
         },
+        size: {
+          '0%, 100%': { height: "3rem" },
+          "50%": { height: "4rem" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         
         bounce: 'bounce 1.3s infinite',
+        size: 'size 1s infinite'
       },
     },
   },
