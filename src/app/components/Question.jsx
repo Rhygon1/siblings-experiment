@@ -7,10 +7,8 @@ export default function Question(props) {
   }
 
   return (
-    <div className="h-screen w-screen">
-      <img className="z-[-10] xl:blur-sm bg-[url('/white-scribbles.png')] bg-cover bg-center h-screen w-screen absolute"></img>
-      <img className="hidden xl:inline-block z-[-10] left-1/3 bg-[url('/white-scribbles.png')] bg-cover bg-center h-screen w-screen xl:w-1/3 absolute"></img>
-      
+    <div className="h-screen w-screen md:w-1/3 md:min-w-[30rem] md:absolute md:left-1/2 md:translate-x-[-50%]">
+      <img className="z-[-10] bg-[url('/white-scribbles.png')] bg-cover bg-center h-screen w-screen absolute"></img>
       <div className="w-full max-w-lg h-full flex items-center justify-center">
         <div className="z-10 flex items-center justify-center absolute inset-0">
           <div className="relative z-20">
@@ -18,7 +16,7 @@ export default function Question(props) {
             <Button className="" onClick={nextQuestion}>Next Question</Button>
           </div>
 
-        <img className="w-full xl:w-auto h-auto xl:h-full absolute" src="/questions-frame.png"></img>
+        <img className="w-full lg:w-auto h-auto lg:h-full absolute" src="/questions-frame.png"></img>
         </div>
       </div>
     </div>
