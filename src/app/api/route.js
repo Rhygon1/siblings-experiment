@@ -23,7 +23,8 @@ export async function POST(request) {
 
     list.push(responses);
     const newResponse = new Response({response: responses})
-    newResponse.save()
+    let r = newResponse.save()
+    console.log(r)
 
     let averages = {
         0: new Array(QUESTIONS).fill(0),
