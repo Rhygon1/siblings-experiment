@@ -43,7 +43,7 @@ export default function Results(props) {
 
   useEffect(() => {
     async function fetchResponses() {
-      let res = await fetch("/averages.json");
+      let res = await fetch("/api");
       res = await res.json();
 
       console.log(res);

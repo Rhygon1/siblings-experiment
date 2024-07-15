@@ -5,17 +5,17 @@ export default function Title(props) {
         <img
           src="/door-large.png"
           onClick={() => props.setCurrQues((_) => 1)}
-          className="h-full w-full hidden sm:inline-block"
+          className="h-full w-full hidden md:inline-block"
         />
         <img
           src="/door-small.png"
           onClick={() => props.setCurrQues((_) => 1)}
-          className="h-full w-full sm:hidden inline-block"
+          className="h-full w-full md:hidden inline-block"
         />
         <img
           src="cursor.png"
           onClick={() => props.setCurrQues((_) => 1)}
-          className="absolute top-[50%] sm:top-[54%] left-[75%] sm:left-[69%] h-14 animate-size"
+          className="absolute top-[50%] md:top-[54%] left-[75%] md:left-[69%] h-14 animate-size"
         ></img>
       </div>
     </main>
