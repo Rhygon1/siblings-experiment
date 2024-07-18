@@ -13,9 +13,12 @@ export default function Question(props) {
   }
 
   useEffect(() => {
-    console.log(selectedValue);
+    console.log(selectedValue, props.currQues);
     props.setAnswers((curr) => {
-      curr[props.currQues] = (Array.isArray(props.question[1]) && props.currQues != 12) ? (10/(props.question[1].length-1))*Number(selectedValue) : Number(selectedValue);
+      curr[props.currQues] =
+        Array.isArray(props.question[1]) && props.currQues != 11
+          ? ((10 / (props.question[1].length - 1)) * Number(selectedValue))
+          : Number(selectedValue);
       return curr;
     });
   }, [selectedValue]);
@@ -37,15 +40,15 @@ export default function Question(props) {
       />
       <div className="z-10 flex items-center justify-center absolute inset-0">
         <div className="flex flex-col items-center justify-around relative h-3/4 w-3/4 bg-white border-[rgb(162,202,188)] border-[1.3rem]">
-          <p className="text-[rgb(162,202,188)] font-bold h-1/4 w-3/4 text-center">
+          <p className={`text-[rgb(162,202,188)] font-bold h-fit w-4/5 text-center ${props.currQues==11 ? "text-sm" : "text-md"}`}>
             {props.question[0]}
           </p>
-          <div className="w-full h-fit flex flex-col justify-around items-center gap-16">
+          <div className="w-full h-fit flex flex-col justify-evenly items-center gap-12">
             {Array.isArray(props.question[1]) ? (
               <RadioGroup
                 onValueChange={valueChange}
                 value={`${selectedValue}`}
-                className="w-full flex items-center justify-center flex-col gap-5"
+                className="w-full flex items-center justify-evenly flex-col gap-5"
               >
                 {props.question[1].map((a, i) => (
                   <div
@@ -60,7 +63,10 @@ export default function Question(props) {
                       id={`ad${i}`}
                       className="hidden"
                     />
-                    <Label htmlFor={`ad${i}`} className="cursor-pointer text-center">
+                    <Label
+                      htmlFor={`ad${i}`}
+                      className="cursor-pointer text-center"
+                    >
                       {a}
                     </Label>
                   </div>

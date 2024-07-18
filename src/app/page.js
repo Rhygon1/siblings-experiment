@@ -22,7 +22,7 @@ export default function Home() {
     ["How important is it for you to avoid conflict in social situations?", "slide"],
     ["On a scale of 1 (very uncomfortable) to 10 (extremely comfortable), how would you rate your ability to help resolve disagreements between others?", "slide"],
     ["How likely are you to take calculated risks for the sake of personal growth and learning?", "slide"],
-    ["Which sibling are you actually? This ", ["Youngest sibling", "Middle sibling", "Oldest sibling", "Only child"]]
+    ["NOTE: This will NOT impact your results but rather is important data for a research experiment conducted on this survey. The survey will solely compare your actual role with the role you are assigned and analyze the average response for that given role. Everyone doing this will remain anonymous and is just for the sake of fun times and giggles!", ["Youngest sibling", "Middle sibling", "Oldest sibling", "Only child"]]
   ]
   const [answers, setAnswers] = useState(new Array(questions.length).fill(0));
 
