@@ -15,7 +15,7 @@ export default function Question(props) {
   useEffect(() => {
     console.log(selectedValue);
     props.setAnswers((curr) => {
-      curr[props.currQues] = Array.isArray(props.question[1]) ? (10/(props.question[1].length-1))*Number(selectedValue) : Number(selectedValue);
+      curr[props.currQues] = (Array.isArray(props.question[1]) && props.currQues != 12) ? (10/(props.question[1].length-1))*Number(selectedValue) : Number(selectedValue);
       return curr;
     });
   }, [selectedValue]);

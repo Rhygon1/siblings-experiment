@@ -71,8 +71,8 @@ module.exports = {
           '50%': { transform: 'translateY(-5px)' },
         },
         size: {
-          '0%, 100%': { height: "3rem" },
-          "50%": { height: "4rem" }
+          '0%, 100%': { height: "3rem", width: "4rem" },
+          "50%": { height: "4rem", width: "5rem" }
         }
       },
       animation: {
