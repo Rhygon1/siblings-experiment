@@ -42,10 +42,8 @@ export default function Results(props) {
         }
         return lowest;
       });
-    }
-    fetchResponses();
 
-    function sendResults() {
+      
       setSent((_) => true);
       if (!sent) {  
         console.log(props.answers);
@@ -60,7 +58,7 @@ export default function Results(props) {
         postResults();
       }
     }
-    sendResults();
+    fetchResponses();
   }, []);
 
   return (
