@@ -86,7 +86,7 @@ export default function Results(props) {
             </p>
             <p
               disabled
-              className="w-full h-[60%] rounded-none resize-none disabled:opacity-100 text-black bg-white p-2 font-medium text-center"
+              className="w-full h-[60%] rounded-none resize-none text-sm disabled:opacity-100 text-black bg-white p-2 font-medium text-center"
             >
               {wands[prediction]}
             </p>
